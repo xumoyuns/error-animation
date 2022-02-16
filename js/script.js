@@ -1,4 +1,20 @@
 document.addEventListener("mousemove", function (e) {
+  var fontType = [
+    "Shizuru",
+    "Redressed",
+    "Syne Tactile",
+    "Playfair Display",
+    "Inconsolata",
+    "Lobster",
+    "Dancing Script",
+    "Architects Daughter",
+    "Indie Flower",
+    "Questrial",
+    "Cookie",
+  ];
+  var num;
+  num = Math.floor(Math.random() * 11);
+  console.log(fontType[num]);
   let body = document.querySelector("body");
   let iconBox = document.createElement("div");
   iconBox.textContent = "ERROR";
@@ -11,11 +27,12 @@ document.addEventListener("mousemove", function (e) {
   iconBox.style.top = y + "px";
 
   let size = Math.random() * 80;
-  iconBox.style.width = Math.random() * 50 + size + "px";
+  iconBox.style.width = Math.random() * 80 + size + "px";
   iconBox.style.color = "#" + (((1 << 44) * Math.random()) | 100).toString(16);
-  iconBox.style.fontSize = Math.random() * 20 + "px";
+  iconBox.style.fontSize = Math.random() * 40 + "px";
+  iconBox.style.fontFamily = fontType[num];
 
-  iconBox.style.height = Math.random() * 200 + size + "px";
+  iconBox.style.height = Math.random() * 400 + size + "px";
 
   let transformValue = Math.random() * 360;
   iconBox.style.transform = " rotate(" + transformValue + "deg)";
